@@ -31,7 +31,7 @@ function App() {
 
 	const getLocation = async (inputType) => {
 		const response = await fetch(
-			`https://geo.ipify.org/api/v2/country,city?apiKey=at_COrOZ7WTZ2WyxRZCjjAF4uuvEGeY5&${inputType}=${iPAddressOrDomainInput}`
+			`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_IPIFY_API}&${inputType}=${iPAddressOrDomainInput}`
 		);
 		const data = await response.json();
 		if (data.messages) {
